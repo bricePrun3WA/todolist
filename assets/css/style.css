@@ -1,0 +1,173 @@
+/*
+ * Style from the todo list
+ */
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("./../misc/Montserrat-VariableFont_wght.ttf");
+}
+
+/* Custom theme colors */
+:root {
+	--white: #efefef;
+	--header: #efeaf5;
+	--footer: #1f1f1f;
+	
+	--table-header: #1f1f1f;
+	--table-border: #1f1f1f;
+	--table-footer: #1f1f1f;
+	
+	--header-height: 15vh;
+	--footer-height: 1em;
+	
+	--btn-validate: #6f42c1;
+	--btn-cancel: #007bff;
+}
+
+/* Main components */
+* {
+	font-family: "Montserrat", sans-serif;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.row > .column {
+    padding: 0.5em;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+}
+
+header, main, footer {
+	display: flex;
+	
+	left: 0;
+	right: 0;
+}
+
+header, footer {
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+	background-color: var(--header);
+	
+	font-size: 2em;
+	height: var(--header-height);
+}
+
+header > h1 {
+	margin: 0;
+	padding: 0.5em;
+}
+
+main {
+	background-color: #ffffff;
+	
+	padding: 1em;
+	height: calc(100vh - (var(--header-height) + var(--footer-height)));
+}
+	
+
+footer {
+	bottom: 0;
+	
+	background-color: var(--footer);
+	color: var(--white);
+	
+	padding: 1em;
+	height: var(--footer-height);
+	
+	font-weight: bold;
+}
+
+/* Position managment */
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+
+.align-center {
+	justify-content: center;
+}
+
+/* Buttons */
+.btn {
+	padding: 0.5em;
+	margin: 0.5em;
+	
+	border: none;
+	border-radius: 0.5em;
+	
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+	
+	cursor: pointer;
+}
+
+.btn-validate {
+	background-color: var(--btn-validate);
+	color: var(--white);
+}
+.btn-cancel {
+	background-color: var(--btn-cancel);
+	color: var(--white);
+}
+
+/* Table properties */
+table {
+	border: 1px solid var(--table-border);
+	border-collapse: collapse;
+	min-width: 50%;
+}
+
+table > tbody > tr > td {
+	min-height: 1em;
+    padding: 0.5em;
+}
+
+thead {
+	background-color: var(--table-header);
+	color: var(--white);
+}
+
+tfoot {
+	background-color: var(--table-footer);
+	color: var(--white);
+}
+
+/* FORMS */
+label {
+	font-weight: bold;
+}
+
+input[type="text"], textarea {
+	border: 1px solid var(--table-border);
+	border-radius: 0.5em;
+	margin: 1em;
+	
+	margin-bottom: 1em;
+	padding: 0.5em;
+	min-width: 50%;
+}
+
+@media all and (max-width: 40vh) {
+    .row {
+		flex-direction: column;
+		display: inline-block;
+	}
+}
